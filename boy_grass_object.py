@@ -19,6 +19,11 @@ def handle_events():
 open_canvas()
 
 
+def reset_world():
+
+    pass
+
+
 reset_world()
 while True:
     handle_events()
