@@ -102,6 +102,7 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
+
     Sballs = [Small_Ball() for i in range(10)]
     world += Sballs
     Bballs = [Big_Ball() for i in range(10)]
