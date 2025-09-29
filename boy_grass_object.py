@@ -60,7 +60,8 @@ class Small_Ball:
             self.y -= self.fall_speed
     def draw(self):
         self.image.draw(self.x, self.y)
-        pass
+
+
 class Big_Ball:
     def __init__(self):
         self.image = load_image('ball41x41.png')
@@ -68,10 +69,15 @@ class Big_Ball:
         self.y = 599
         self.fall_speed = random.randint(5, 20)
     def updata(self):
-        pass
+        # 45는 grass 높이
+        if self.y - self.fall_speed < 45 + self.image.h / 2:
+            self.y = 45 + self.image.h / 2
+        else:
+            self.y -= self.fall_speed
     def draw(self):
-        pass
-    pass
+        self.image.draw(self.x, self.y)
+
+
 def handle_events():
     global running
     events = get_events()
