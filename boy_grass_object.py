@@ -1,7 +1,8 @@
 from pico2d import *
 import random
 
-
+class Grass:
+    pass
 
 
 def handle_events():
@@ -17,6 +18,7 @@ def handle_events():
 
 
 open_canvas()
+
 
 
 def reset_world():
