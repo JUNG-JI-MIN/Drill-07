@@ -48,17 +48,25 @@ class Zombie:
 class Small_Ball:
     def __init__(self):
         self.image = load_image('ball21x21.png')
-        self.image = load_image('ball41x41.png')
         self.x = random.randint(0, 800)
         self.y = 599
         self.fall_speed = random.randint(5, 20)
-    pass
+
+    def updata(self):
+        if self.y > 30 + (self.image.h / 2):
+            self.y -= self.fall_speed
+    def draw(self):
+        pass
 class Big_Ball:
     def __init__(self):
         self.image = load_image('ball41x41.png')
         self.x = random.randint(0, 800)
         self.y = 599
         self.fall_speed = random.randint(5, 20)
+    def updata(self):
+        pass
+    def draw(self):
+        pass
     pass
 def handle_events():
     global running
