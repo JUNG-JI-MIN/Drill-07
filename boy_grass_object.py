@@ -67,6 +67,8 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
+
+
     running = True
 
 #게임 로직
