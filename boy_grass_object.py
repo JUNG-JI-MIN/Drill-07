@@ -12,7 +12,10 @@ class Grass:
 
 class Boy:
     def __init__(self):
-    pass
+        self.image = load_image('run_animation.png')
+        self.x = 400
+    def draw(self):
+        self.image.draw(self.x,90)
 
 def handle_events():
     global running
