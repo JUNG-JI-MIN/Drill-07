@@ -9,8 +9,10 @@ class Grass:
 
     def draw(self):
         self.image.draw(400,30)
-        pass
 
+class Boy:
+    def __init__(self):
+    pass
 
 def handle_events():
     global running
@@ -25,7 +27,9 @@ def handle_events():
 def reset_world():
     global running
     global grass
+    global boy
     grass = Grass()
+    boy = Boy()
     
     running = True
 
