@@ -27,6 +27,7 @@ class Boy:
     def updata(self):
         self.x += 5
         self.frame = (self.frame + 1) % 8
+
 class Zombie:
     def __init__(self):
         self.image = load_image('zombie_run_animation.png')
@@ -67,7 +68,8 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
-
+    balls = [Ball() for i in range(20)]
+    world += balls
 
     running = True
 
