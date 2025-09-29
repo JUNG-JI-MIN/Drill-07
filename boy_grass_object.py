@@ -2,7 +2,12 @@ from pico2d import *
 import random
 
 class Grass:
-    pass
+    #생성자 함수 초기화수행
+    def __init__(self):
+        # grass image load grass 객체의 속성을 정의하고 초기화
+        self.image = load_image('grass.png')
+
+
 
 
 def handle_events():
