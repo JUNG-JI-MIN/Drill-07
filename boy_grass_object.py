@@ -53,8 +53,9 @@ class Small_Ball:
         self.fall_speed = random.randint(5, 20)
 
     def updata(self):
-        if self.y - self.fall_speed < 30:
-            self.y = 30
+        # 45는 grass 높이
+        if self.y - self.fall_speed < 45 + self.image.h / 2:
+            self.y = 45 + self.image.h / 2
         else:
             self.y -= self.fall_speed
     def draw(self):
