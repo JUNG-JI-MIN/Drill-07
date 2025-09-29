@@ -53,9 +53,12 @@ class Small_Ball:
         self.fall_speed = random.randint(5, 20)
 
     def updata(self):
-        if self.y > 30 + (self.image.h / 2):
+        if self.y - self.fall_speed < 30:
+            self.y = 30
+        else:
             self.y -= self.fall_speed
     def draw(self):
+        self.image.draw(self.x, self.y)
         pass
 class Big_Ball:
     def __init__(self):
