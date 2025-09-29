@@ -21,6 +21,7 @@ open_canvas()
 
 reset_world()
 while True:
+    handle_events()
     updata_world()
     render_world()
     delay(0.05)
