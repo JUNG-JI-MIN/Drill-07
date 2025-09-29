@@ -14,8 +14,13 @@ class Boy:
     def __init__(self):
         self.image = load_image('run_animation.png')
         self.x = 400
+        self.frame = 0
+        self.dir = 1
     def draw(self):
-        self.image.draw(self.x,90)
+        self.image.clip_draw(self.frame * 100,0,100,100,self.x,90)
+    def updata(self):
+        self.x += 5
+        self.frame += (self.frame + 1) % 8
 
 def handle_events():
     global running
@@ -26,7 +31,7 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
-
+#게임 렌더링
 def reset_world():
     global running
     global grass
@@ -36,8 +41,9 @@ def reset_world():
     
     running = True
 
-
+#게임 로직
 def updata_world():
+    boy.updata()
     pass
 
 
@@ -45,6 +51,7 @@ def render_world():
     # grass 객체의 draw 메서드를 호출하여 화면에 잔디를 그린다
     clear_canvas()
     grass.draw()
+    boy.draw()
     update_canvas()
     pass
 
