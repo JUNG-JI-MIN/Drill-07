@@ -45,7 +45,7 @@ class Zombie:
         self.x += 5
         self.frame = (self.frame + 1) % 10
 
-class Small_Ball:
+class Ball:
     def __init__(self):
         self.kind = random.randrange(0,2)
         if self.kind == 0:
@@ -90,8 +90,8 @@ def reset_world():
     world.append(zombie)
 
 
-    Sballs = [Small_Ball() for i in range(20)]
-    world += Sballs
+    balls = [Ball() for i in range(20)]
+    world += balls
 
     running = True
 
