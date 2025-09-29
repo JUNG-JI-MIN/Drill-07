@@ -44,6 +44,9 @@ class Zombie:
     def updata(self):
         self.x += 5
         self.frame = (self.frame + 1) % 10
+
+class Ball:
+    pass
 def handle_events():
     global running
     events = get_events()
