@@ -47,7 +47,11 @@ class Zombie:
 
 class Small_Ball:
     def __init__(self):
-        self.image = load_image('ball21x21.png')
+        self.kind = random.randrange(0,2)
+        if self.kind == 0:
+            self.image = load_image('ball21x21.png')
+        else:
+            self.image = load_image('ball41x41.png')
         self.x = random.randint(0, 800)
         self.y = 599
         self.fall_speed = random.randint(5, 20)
@@ -60,23 +64,6 @@ class Small_Ball:
             self.y -= self.fall_speed
     def draw(self):
         self.image.draw(self.x, self.y)
-
-
-class Big_Ball:
-    def __init__(self):
-        self.image = load_image('ball41x41.png')
-        self.x = random.randint(0, 800)
-        self.y = 599
-        self.fall_speed = random.randint(5, 20)
-    def updata(self):
-        # 45는 grass 높이
-        if self.y - self.fall_speed < 45 + self.image.h / 2:
-            self.y = 45 + self.image.h / 2
-        else:
-            self.y -= self.fall_speed
-    def draw(self):
-        self.image.draw(self.x, self.y)
-
 
 def handle_events():
     global running
@@ -103,10 +90,8 @@ def reset_world():
     world.append(zombie)
 
 
-    Sballs = [Small_Ball() for i in range(10)]
+    Sballs = [Small_Ball() for i in range(20)]
     world += Sballs
-    Bballs = [Big_Ball() for i in range(10)]
-    world += Bballs
 
     running = True
 
