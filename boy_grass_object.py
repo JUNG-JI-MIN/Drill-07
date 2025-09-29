@@ -45,7 +45,20 @@ class Zombie:
         self.x += 5
         self.frame = (self.frame + 1) % 10
 
-class Ball:
+class Small_Ball:
+    def __init__(self):
+        self.image = load_image('ball21x21.png')
+        self.image = load_image('ball41x41.png')
+        self.x = random.randint(0, 800)
+        self.y = 599
+        self.fall_speed = random.randint(5, 20)
+    pass
+class Big_Ball:
+    def __init__(self):
+        self.image = load_image('ball41x41.png')
+        self.x = random.randint(0, 800)
+        self.y = 599
+        self.fall_speed = random.randint(5, 20)
     pass
 def handle_events():
     global running
@@ -71,8 +84,10 @@ def reset_world():
     zombie = Zombie()
     world.append(zombie)
 
-    balls = [Ball() for i in range(20)]
-    world += balls
+    Sballs = [Small_Ball() for i in range(10)]
+    world += Sballs
+    Bballs = [Big_Ball() for i in range(10)]
+    world += Bballs
 
     running = True
 
